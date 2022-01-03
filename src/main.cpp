@@ -1,18 +1,21 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <tuple>
+#include <filesystem>
 #include <json/json.h>
-#include "fileparser/jsonparser/jsonparser.hpp"
-// #include "fileparser/baseparser/baseparser.hpp"
+#include "dataextraction/positionextractor/positionextractor.hpp"
 
 int main()
 {
-    jsonParser parser("Annotation_P4a_merged.json");
+    positionExtractor position("Annotation_P4a_merged.json");
 
-    parser.read();
+    position.getData();
 
-    Json::Value root = parser.getRoot();
-
-    std::cout << root["annotations"][5] << std::endl;
+    for (auto &x : position.m_positionData)
+    {
+        std::cout << x;
+    }
 
     return 0;
 }
