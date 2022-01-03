@@ -1,6 +1,6 @@
-#include "positionextractor.hpp"
+#include "positionhandler.hpp"
 
-void positionExtractor::getData()
+void positionHandler::getData()
 {
     Json::Value classObj = this->getClassObj();
 

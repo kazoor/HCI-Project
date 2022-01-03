@@ -1,7 +1,7 @@
-#include "baseextractor.hpp"
+#include "basehandler.hpp"
 #include "../../fileparser/jsonparser/jsonparser.hpp"
 
-baseExtractor::baseExtractor(const std::string &filePath)
+baseHandler::baseHandler(const std::string &filePath)
 {
     jsonParser parser(filePath);
 
@@ -10,7 +10,7 @@ baseExtractor::baseExtractor(const std::string &filePath)
     this->m_root = parser.getRoot();
 }
 
-void baseExtractor::findJsonClass(const std::string &className)
+void baseHandler::findJsonClass(const std::string &className)
 {
     for (const Json::Value &it : this->m_root["annotations"])
     {
@@ -21,7 +21,7 @@ void baseExtractor::findJsonClass(const std::string &className)
     }
 }
 
-Json::Value baseExtractor::getClassObj()
+Json::Value baseHandler::getClassObj()
 {
     if (!this->m_classObj)
         return 0;

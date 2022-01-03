@@ -4,10 +4,10 @@
 #include <vector>
 #include <json/json.h>
 
-class baseExtractor
+class baseHandler
 {
 public:
-    baseExtractor(const std::string &filePath);
+    baseHandler(const std::string &filePath);
 
     void findJsonClass(const std::string &className);
 

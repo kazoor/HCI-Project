@@ -4,11 +4,11 @@
 #include <tuple>
 #include <filesystem>
 #include <json/json.h>
-#include "dataextraction/positionextractor/positionextractor.hpp"
+#include "datahandlers/positionhandler/positionhandler.hpp"
 
 int main()
 {
-    positionExtractor position("Annotation_P4a_merged.json");
+    positionHandler position("Annotation_P4a_merged.json");
 
     position.getData();
 

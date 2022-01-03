@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../baseextractor/baseextractor.hpp"
+#include "../basehandler/basehandler.hpp"
 
 struct positionData
 {
@@ -12,10 +12,10 @@ struct positionData
     Json::String argument;
 };
 
-class positionExtractor : public baseExtractor
+class positionHandler : public baseHandler
 {
 public:
-    positionExtractor(const std::string &filePath) : baseExtractor(filePath)
+    positionHandler(const std::string &filePath) : baseHandler(filePath)
     {
         this->findJsonClass("Position_on");
     };
