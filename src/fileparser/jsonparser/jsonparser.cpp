@@ -6,15 +6,14 @@ void jsonParser::read()
     std::ifstream *stream = this->getStreamPointer();
 
     *stream >> this->m_root;
+
+    stream->close();
 }
 
 void jsonParser::dump()
 {
     if (!this->m_root)
-    {
-        std::cout << "Failed to dump data, m_root is NULL" << std::endl;
         return;
-    }
 
     std::cout << this->m_root << std::endl;
 }

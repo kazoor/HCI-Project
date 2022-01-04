@@ -7,17 +7,16 @@ class baseParser
 public:
     baseParser(const std::string &filePath);
 
-    ~baseParser()
+    virtual ~baseParser()
     {
-        this->m_filePath = "";
-        this->m_stream = nullptr;
-
-        delete this->m_stream;
+        this->clean();
     }
 
     std::string getFilePath();
 
     std::ifstream *getStreamPointer();
+
+    void clean();
 
     // Virtual functions to override
     // Function to read data.

@@ -17,3 +17,11 @@ std::ifstream *baseParser::getStreamPointer()
 {
     return this->m_stream;
 }
+
+void baseParser::clean()
+{
+    this->m_filePath = "";
+    this->m_stream = nullptr;
+
+    delete this->m_stream;
+}

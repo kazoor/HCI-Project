@@ -8,6 +8,11 @@ class jsonParser : public baseParser
 public:
     jsonParser(const std::string &filePath) : baseParser(filePath){};
 
+    ~jsonParser()
+    {
+        this->clean();
+    }
+
     void read() override;
 
     void dump() override;
